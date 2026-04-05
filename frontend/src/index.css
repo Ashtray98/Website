@@ -579,31 +579,3 @@ body {
   line-height: 1;
   min-width: 20px;
 }
-
-top: -20vh;
-left: 50%;
-transform: translateX(-50%);
-width: 80vw;
-height: 60vh;
-background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 40%, transparent 70%);
-pointer-events: none;
-z-index: 0;
-animation: glow-pulse 10s ease-in-out infinite;
-}
-
-/* ===== Kbd (keyboard shortcuts) ===== */
-.kbd {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px 6px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-hover);
-  border-radius: 4px;
-  line-height: 1;
-  min-width: 20px;
-}
