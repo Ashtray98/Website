@@ -1,0 +1,35 @@
+DATA-WEAVE Knowledge Retrieval System - Architecture Document
+
+1. Introduction
+DATA-WEAVE is an AI-powered enterprise knowledge retrieval system designed to solve the problem of fragmented organizational knowledge. Modern organizations store vast amounts of information across disconnected documents, databases, and internal tools. DATA-WEAVE provides a unified, context-aware retrieval interface.
+
+2. System Architecture
+The system consists of three main components:
+- Frontend: A React-based web application with a futuristic dark theme
+- Backend: A Python FastAPI server handling document processing and AI operations
+- Vector Database: ChromaDB for storing and retrieving document embeddings
+
+3. Document Ingestion Pipeline
+When a user uploads a document, the following pipeline executes:
+Step 1: Parsing - The document is parsed using specialized libraries (PyMuPDF for PDFs, python-docx for Word files)
+Step 2: Chunking - The text is split into overlapping chunks using RecursiveCharacterTextSplitter
+Step 3: Embedding - Each chunk is converted to a vector embedding using sentence-transformers
+Step 4: Storage - The embeddings are stored in ChromaDB with metadata
+
+4. Retrieval-Augmented Generation (RAG)
+When a user asks a question:
+- The query is embedded using the same model
+- Cosine similarity search finds the most relevant chunks
+- The chunks are passed as context to an LLM
+- The LLM generates a grounded, cited answer
+
+5. Key Features
+- Semantic Search: Natural language queries return contextually relevant results
+- Source Attribution: Every answer includes references to source documents
+- Knowledge Base Dashboard: Visual overview of all ingested documents
+- Multiple file format support: PDF, DOCX, TXT, and web URLs
+
+6. Technical Stack
+- Frontend: React, Vite, TailwindCSS v4, React Router, Lucide Icons
+- Backend: FastAPI, LangChain, ChromaDB, sentence-transformers
+- AI: sentence-transformers/all-MiniLM-L6-v2 for embeddings, OpenAI GPT for generation
