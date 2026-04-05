@@ -11,7 +11,8 @@ export default function App() {
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          {/*... other routes*/}
             <Route index element={<Home />} />
             <Route path="chat" element={<Chat />} />
             <Route path="ingest" element={<Ingest />} />
